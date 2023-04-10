@@ -141,7 +141,7 @@ onUnmounted(() => {
 // import '@toast-ui/editor/dist/i18n/zh-cn.js' // 工具栏显示中文
 import '@toast-ui/editor/dist/toastui-editor.css'
 import Editor, { EditorCore } from '@toast-ui/editor'
-import { reactive } from '@vue/reactivity'
+import { reactive } from 'vue'
 import { defineComponent, onMounted, ref } from 'vue'
 import { nextTick } from 'process'
 import { ElMessage } from 'element-plus'

@@ -29,16 +29,18 @@ const Form2 = reactive({
 })
 const validateOldPass = (rule: any, value: any, callback: any) => {
     if (value === '') {
-        callback(new Error('密码不能为空！'))}
-    // } else{
-    //     if (value !== "123456") {
-    //     callback(new Error('原始密码错误！'))
-    // } else {
-    //     callback()
-    // }
-    // }
-   
+        callback(new Error('密码不能为空！'))
+    }
+    else {
+        if (value !== "123456") {
+            callback(new Error("原始密码错误！"))
+        } else {
+            callback()
+        }
+    }
 }
+
+
 
 const validateNewPass = (rule: any, value: any, callback: any) => {
     if (value === "") {
@@ -49,7 +51,7 @@ const validateNewPass = (rule: any, value: any, callback: any) => {
             ruleFormRef.value.validateField('confirmpassword', () => null)
         }
     }
-    var str = RegExp("^[]{6,18}$")
+    var str = RegExp("^[A-Za-z0-9]{6,18}$")
     if (!str.test(value)) {
         callback(new Error('当前密码格式不正确!'))
     } else {
@@ -67,9 +69,9 @@ const validateConfirmPass = (rule: any, value: any, callback: any) => {
     }
 }
 const rules = reactive({
-    oldPwd: [{ validator: validateOldPass, trigger: "blur" }],
-    newPwd: [{ validator: validateNewPass, trigger: 'blur' }],
-    confirmPwd: [{ validator: validateConfirmPass, trigger: 'blur' }],
+    oldpassword: [{ validator: validateOldPass, trigger: "blur" }],
+    newpassword: [{ validator: validateNewPass, trigger: 'blur' }],
+    confirmpassword: [{ validator: validateConfirmPass, trigger: 'blur' }],
 })
 const onConfirm = async () => {
     await ruleFormRef.value?.validate().catch((err) => {
@@ -110,19 +112,19 @@ const onConfirm = async () => {
 
             <el-dialog v-model="dialogVisible" title="修改密码">
                 <el-form :model="Form2" class="form2" ref="ruleFormRef" :rules="rules">
-                    <el-form-item label="用户名:" :label-width="formLabelWidth" >
+                    <el-form-item label="用户名:" :label-width="formLabelWidth">
                         <el-input v-model="Form2.username" disabled />
                     </el-form-item>
                     <br />
-                    <el-form-item label="原始密码:" :label-width="formLabelWidth" prop="oldPwd">
+                    <el-form-item label="原始密码:" :label-width="formLabelWidth" prop="oldpassword">
                         <el-input v-model="Form2.oldpassword" show-password placeholder="请输入原始密码" />
                     </el-form-item>
                     <br />
-                    <el-form-item label="新密码:" :label-width="formLabelWidth" prop="newPwd">
+                    <el-form-item label="新密码:" :label-width="formLabelWidth" prop="newpassword">
                         <el-input v-model="Form2.newpassword" show-password placeholder="请输入6-18位新密码" />
                     </el-form-item>
                     <br />
-                    <el-form-item label="确认密码:" :label-width="formLabelWidth" prop="confirmPwd">
+                    <el-form-item label="确认密码:" :label-width="formLabelWidth" prop="confirmpassword">
                         <el-input v-model="Form2.confirmpassword" show-password placeholder="请再次输入更改后的密码" />
                     </el-form-item>
                     <br />
@@ -151,8 +153,8 @@ const onConfirm = async () => {
 }
 
 .form1 {
-    margin-left: 400px;
-    margin-top: 50px;
+    margin-left: 600px;
+    margin-top: 150px;
 }
 
 .form2 {

@@ -26,7 +26,7 @@ const handleCommand = (command: string | number | object) => {
         router.push('/dissertation')
     }
     if(command==="8"){
-        router.push('/defenseArrangements')
+        router.push('/stuArrangements')
     }
     if(command==="9"){
         router.push('/defenseRecord')
@@ -90,7 +90,7 @@ const handleCommand = (command: string | number | object) => {
                 <template #title>
                     <el-icon> <IEpChatDotRound /></el-icon> <span> 答辩管理 </span>
                 </template>
-                <el-menu-item index="/arrangements" command="8">
+                <el-menu-item index="/stuArrangements" command="8">
                     <el-icon> <IEpCalendar/> </el-icon>
                     <span>答辩安排信息</span>
                 </el-menu-item>

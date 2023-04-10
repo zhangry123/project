@@ -10,7 +10,7 @@ const handleCommand = (command: string | number | object) => {
         router.push('/submitAssignment')
     }
     if(command==="3"){
-        router.push('/choiceTitle')
+        router.push('/submitTitle')
     }
     if(command==="4"){
         router.push('/processSelect')
@@ -61,7 +61,7 @@ const handleCommand = (command: string | number | object) => {
                 <template #title>
                     <el-icon> <IEpConnection/></el-icon> <span> 申报管理 </span>
                 </template>
-                <el-menu-item index="/choiceTitle" command="3">
+                <el-menu-item index="/submitTitle" command="3">
                     <el-icon> <IEpDocumentAdd/> </el-icon>
                     <span>申报题目</span>
                 </el-menu-item>
@@ -99,7 +99,7 @@ const handleCommand = (command: string | number | object) => {
                 <template #title>
                     <el-icon> <IEpChatDotRound /></el-icon> <span> 答辩管理 </span>
                 </template>
-                <el-menu-item index="/defenseArrangements" command="9">
+                <el-menu-item index="/teaArrangements" command="9">
                     <el-icon> <IEpCalendar/> </el-icon>
                     <span>答辩安排信息</span>
                 </el-menu-item>

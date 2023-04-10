@@ -14,7 +14,7 @@ import Assignment from '@/components/stu/selecttitle/AssignmentBook.vue'
 import OpeningReport from '@/components/stu/document/OpeningReport.vue'
 import InterimReport from '@/components/stu/document/InterimReport.vue'
 import Dissertation from '@/components/stu/document/Dissertation.vue'
-import Arrangements from '@/components/stu/reply/Arrangements.vue'
+import StuArrangements from '@/components/stu/reply/Arrangements.vue'
 import Record from '@/components/stu/reply/Record.vue'
 import TeaFirstPage from '@/components/teacher/firstpage/FirstPage.vue'
 import DeanPublishNotice from '@/components/dean/publishnotice/PublishNotice.vue'
@@ -23,6 +23,8 @@ import Statistics from '@/components/admin/statistics/Statistics.vue'
 import UserAdmain from '@/components/admin/userAdmin/UserAdmin.vue'
 import TeaPublishNotice from '@/components/teacher/publishnotice/Publishnotice.vue'
 import SubmitAssignment from '@/components/teacher/submitassignment/SubmitAssignment.vue'
+import SubmitTitle from '@/components/teacher/submittitle/SubmitTitle.vue'
+import TeaArrangement from '@/components/teacher/defense/Arrangement.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -30,6 +32,11 @@ const router = createRouter({
       path: '',
       name: 'login',
       component: Login,
+    },
+    {
+      path:'/person',
+      name:'person',
+      component:PersonView,
     },
     {
       
@@ -42,8 +49,8 @@ const router = createRouter({
           component:Record,
         },
         {
-          path:'/arrangements',
-          component:Arrangements,
+          path:'/stuArrangements',
+          component:StuArrangements,
         },
         {
           path:'/dissertation',
@@ -69,10 +76,7 @@ const router = createRouter({
           path:'/handbook',
           component:Handbook,
         },
-        {
-          path:'/person',
-          component:PersonView,
-        },
+        
         {
           path:'/stuhome',
           component:FirstpageView,
@@ -112,6 +116,15 @@ const router = createRouter({
           path:'/submitAssignment',
           component:SubmitAssignment,
         },
+        {
+          path:'/submitTitle',
+          component:SubmitTitle,
+        },
+        {
+          path:'/teaArrangement',
+          component:TeaArrangement,
+        },
+        
       ]
     },
     {

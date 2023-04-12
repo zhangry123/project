@@ -15,7 +15,7 @@ import OpeningReport from '@/components/stu/document/OpeningReport.vue'
 import InterimReport from '@/components/stu/document/InterimReport.vue'
 import Dissertation from '@/components/stu/document/Dissertation.vue'
 import StuArrangements from '@/components/stu/reply/Arrangements.vue'
-import Record from '@/components/stu/reply/Record.vue'
+import StuRecord from '@/components/stu/reply/Record.vue'
 import TeaFirstPage from '@/components/teacher/firstpage/FirstPage.vue'
 import DeanPublishNotice from '@/components/dean/publishnotice/PublishNotice.vue'
 import AdminFirstPage from '@/components/admin/firstpage/FirstPage.vue'
@@ -25,6 +25,15 @@ import TeaPublishNotice from '@/components/teacher/publishnotice/Publishnotice.v
 import SubmitAssignment from '@/components/teacher/submitassignment/SubmitAssignment.vue'
 import SubmitTitle from '@/components/teacher/submittitle/SubmitTitle.vue'
 import TeaArrangement from '@/components/teacher/defense/Arrangement.vue'
+import AuditSelection from '@/components/teacher/audit/AuditSelection.vue'
+import AuditRevise from '@/components/teacher/audit/AuditRevise.vue'
+import AuditOpreport from '@/components/teacher/audit/AuditOpreport.vue'
+import AuditImreport from '@/components/teacher/audit/AuditImreport.vue'
+import AuditDissertation from '@/components/teacher/audit/AuditDissertation.vue'
+import TeaRecord from '@/components/teacher/defense/Record.vue'
+import EvaluateOpReport from '@/components/dean/evaluate/EvaluateOpReport.vue'
+import AuditTitle from '@/components/dean/evaluate/AuditTitle.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -46,7 +55,7 @@ const router = createRouter({
       children:[
         {
           path:'/record',
-          component:Record,
+          component:StuRecord,
         },
         {
           path:'/stuArrangements',
@@ -121,8 +130,32 @@ const router = createRouter({
           component:SubmitTitle,
         },
         {
-          path:'/teaArrangement',
+          path:'/teaArrangements',
           component:TeaArrangement,
+        },
+        {
+          path:'/defenseRecord',
+          component:TeaRecord,
+        },
+        {
+          path:'/processSelect',
+          component:AuditSelection,
+        },
+        {
+          path:'/processRevise',
+          component:AuditRevise,
+        },
+        {
+          path:'/processOpReport',
+          component:AuditOpreport,
+        },
+        {
+          path:'/processImReport',
+          component:AuditImreport,
+        },
+        {
+          path:'/processDissertation',
+          component:AuditDissertation,
         },
         
       ]
@@ -133,9 +166,18 @@ const router = createRouter({
       component: DeanHome,
       children:[
         {
-          path:'/publishNotice',
+          path:'/publishNotices',
           component:DeanPublishNotice,
         },
+        {
+          path:'/processOpreportDean',
+          component:EvaluateOpReport,
+        },
+        {
+          path:'/auditTitle',
+          component:AuditTitle,
+        },
+        
       ]
     },
     {

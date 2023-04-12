@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <h1>默认</h1>
+    <h1>欢迎来到毕业设计--管理员系统！</h1>
 </template>
 
 <style scoped></style>

@@ -10,6 +10,10 @@ const handleCommand = (command: string | number | object) => {
     if (command === "2") {
         router.push('/processOpreportn')
     }
+    if (command === "3") {
+        router.push('/auditTitle')
+    }
+    
 }
 </script>
 <template>
@@ -26,7 +30,7 @@ const handleCommand = (command: string | number | object) => {
                         <IEpBell />
                     </el-icon> <span> 发布管理 </span>
                 </template>
-                <el-menu-item index="/publishNotice" command="1">
+                <el-menu-item index="/publishNotices" command="1">
                     <el-icon>
                         <IEpCalendar />
                     </el-icon>
@@ -40,12 +44,19 @@ const handleCommand = (command: string | number | object) => {
                         <IEpConnection />
                     </el-icon> <span> 评估管理 </span>
                 </template>
-                <el-menu-item index="/processOpreport" command="2">
+                <el-menu-item index="/auditTitle" command="3">
+                    <el-icon>
+                        <IEpDocumentChecked />
+                    </el-icon>
+                    <span>审核题目</span>
+                </el-menu-item>
+                <el-menu-item index="/processOpreportDean" command="2">
                     <el-icon>
                         <IEpDocumentChecked />
                     </el-icon>
                     <span>评估开题报告</span>
                 </el-menu-item>
+                
             </el-sub-menu>
         </el-menu>
     </el-aside>

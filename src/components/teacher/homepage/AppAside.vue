@@ -28,7 +28,7 @@ const handleCommand = (command: string | number | object) => {
         router.push('/processDissertation')
     }
     if(command==="9"){
-        router.push('/defenseArrangements')
+        router.push('/teaArrangements')
     }
     if(command==="10"){
         router.push('/defenseRecord')
@@ -81,7 +81,7 @@ const handleCommand = (command: string | number | object) => {
                     <el-icon> <IEpDocumentChecked/> </el-icon>
                     <span>审核修改选题</span>
                 </el-menu-item>
-                <el-menu-item index="/processOpreport" command="6">
+                <el-menu-item index="/processOpReport" command="6">
                     <el-icon> <IEpDocumentChecked/> </el-icon>
                     <span>审核开题报告</span>
                 </el-menu-item>
@@ -117,7 +117,7 @@ const handleCommand = (command: string | number | object) => {
 .el-aside{
     background-color: #eee;
     height:100vh;
-    width: 250px;
+    width: auto;
 }
 .el-menu{
 
